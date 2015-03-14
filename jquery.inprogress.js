@@ -22,7 +22,8 @@
         
         this.on('keydown', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
-            if ($(this).val().length == settings.max && e.keyCode != 46) {
+            if ($(this).val().length >= settings.max && (e.keyCode != 46 && e.keyCode != 8)) {
+                $(this).val($(this).val().substr(0, settings.max));
                 e.preventDefault();
             }
             $('#'+id+' div').animate({
