@@ -2,7 +2,7 @@
  
     $.fn.inprogress = function(options) {
         var settings = $.extend({
-            max: 500,
+            maxChars: 500,
             bgColor: false,
             textColor: '#999',
             minHeight: '3px',
@@ -22,9 +22,9 @@
         $('#'+id+' div').css('text-align', 'center');
         
         this.on('keydown', function(e){
-            var percent = (($(this).val().length / settings.max) * 100);
-            if ($(this).val().length >= settings.max && (e.keyCode != 46 && e.keyCode != 8)) {
-                $(this).val($(this).val().substr(0, settings.max));
+            var percent = (($(this).val().length / settings.maxChars) * 100);
+            if ($(this).val().length >= settings.maxChars && (e.keyCode != 46 && e.keyCode != 8)) {
+                $(this).val($(this).val().substr(0, settings.maxChars));
                 e.preventDefault();
             }
             $('#'+id+' div').animate({
@@ -36,7 +36,7 @@
             if(settings.showPercent || settings.showRemaining){
                 $('#'+id+' div span')
                     .css({'color': settings.textColor})
-                    .text((settings.showRemaining ? (settings.max-$(this).val().length) : percent.toFixed()+'%'));
+                    .text((settings.showRemaining ? (settings.maxChars-$(this).val().length) : percent.toFixed()+'%'));
             }
         });
         
