@@ -18,8 +18,10 @@
 
         var id = 'inprogress'+Math.floor(Math.random()*1000000000);
         this.after('<div id="'+id+'"><div><span></span></div></div>');
-        $('#'+id).css('max-width', this.width);
-        $('#'+id+' div').css('text-align', 'center');
+        $('#'+id).css('max-width', this.width());
+        $(window).resize(function(){
+            $('#'+id).css('max-width', this.width());
+        });
         
         this.on('keydown', function(e){
             var percent = (($(this).val().length / settings.maxChars) * 100);
