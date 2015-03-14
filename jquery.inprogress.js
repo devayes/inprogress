@@ -12,14 +12,14 @@
         
         var getColor = function(percent){
             var value = (percent/100);
-            var hue=((1-value)*120).toString(10);
-            return ["hsl(",hue,",100%,50%)"].join("");
+            var hue = ((1-value)*120).toString(10);
+            return ["hsl(",hue,",100%,50%)"].join('');
         }
 
-        var id = 'inprogress'+Math.floor(Math.random()*100000000);
+        var id = 'inprogress'+Math.floor(Math.random()*1000000000);
         this.after('<div id="'+id+'"><div><span></span></div></div>');
         $('#'+id).css('max-width', this.width);
-        $('#'+id+' div').css('text-align','center');
+        $('#'+id+' div').css('text-align', 'center');
         
         this.on('keydown', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
