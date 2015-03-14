@@ -1,5 +1,5 @@
 # inprogress jQuery Plugin
-Simple jQuery plugin to add a progress bar under text inputs.
+Simple jQuery plugin to add a progress bar under text inputs. Solves the UX issue of having a maximum character limit for an input field and the user having no idea how close or far they are to the limit without counting or submitting and receiving an error.
 
 ## Usage
 
