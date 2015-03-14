@@ -18,16 +18,16 @@
 
         var id = 'inprogress'+Math.floor(Math.random()*100000000);
         this.after('<div id="'+id+'"><div><span></span></div></div>');
-        $('#'+id).css('max-width', this.width());
+        $('#'+id).css('max-width', this.outerWidth());
         if(this.width()) {
             $(window).resize(function(){
-                $('#'+id).css('max-width', this.width());
+                $('#'+id).css('max-width', this.outerWidth());
             });
         }
 
         this.on('keydown', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
-            $('#'+id).css('max-width', $(this).width()); // Keep it updated.
+            $('#'+id).css('max-width', $(this).outerWidth()); // Keep it updated.
             if ($(this).val().length >= settings.max && (e.keyCode != 46 && e.keyCode != 8)) {
                 $(this).val($(this).val().substr(0, settings.max));
                 e.preventDefault();
