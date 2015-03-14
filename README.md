@@ -12,6 +12,7 @@ Add to a form element:
 $('#wookie').inprogress({
    max: 500, // Maximum 500 characters
    bgColor: false, // Default green to red, set a color here to over-ride (ie: #f00)
+   minHeight: '3px', // Minimum height of the progress bar
    showPercent: false, // Adds x% to progress bar
    showRemaining: false, // adds (max - length) to progress bar
    textColor: '#fff', // Set the text color for the 2 prior options
