@@ -18,7 +18,8 @@
 
         var id = 'inprogress'+Math.floor(Math.random()*100000000);
         this.after('<div id="'+id+'"><div><span></span></div></div>');
-        $('#'+id).width(this.width);
+        $('#'+id).css('max-width', this.width);
+        $('#'+id+' div').css('text-align','center');
         
         this.on('keydown', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
@@ -33,7 +34,6 @@
                 'min-height': settings.minHeight
             });
             if(settings.showPercent || settings.showRemaining){
-                $('#'+id+' div').css('text-align','center');
                 $('#'+id+' div span')
                     .css({'color': settings.textColor})
                     .text((settings.showRemaining ? (settings.max-$(this).val().length) : percent.toFixed()+'%'));
