@@ -2,7 +2,7 @@
  
     $.fn.inprogress = function(options) {
         var settings = $.extend({
-            max: 500,
+            max: (this.prop('maxlength') ? this.prop('maxlength') : 500),
             bgColor: false,
             minHeight: '3px',
             showPercent: false,
