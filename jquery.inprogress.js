@@ -1,3 +1,14 @@
+/*
+ * inProgress - A progress bar for text inputs with limits
+ *
+ * MIT License
+ * http://opensource.org/licenses/MIT
+ *
+ * @author  : Devin Hayes
+ * @doc     : http://devinhayes.com
+ * @version : 1.0
+ *
+ */
 (function ( $ ) {
  
     $.fn.inprogress = function(options) {
