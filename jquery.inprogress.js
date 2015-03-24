@@ -25,10 +25,10 @@
             });
         }
 
-        this.on('keydown', function(e){
+        this.on('keyup', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
             $('#'+id).css('max-width', $(this).outerWidth()); // Keep it updated.
-            if ($(this).val().length >= settings.max && (e.keyCode != 46 && e.keyCode != 8)) {
+            if (percent >= 100 && (e.keyCode != 46 && e.keyCode != 8)) {
                 $(this).val($(this).val().substr(0, settings.max));
                 e.preventDefault();
             }
