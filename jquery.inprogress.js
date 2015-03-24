@@ -47,7 +47,7 @@
         });
         
         if(this.val().length){
-            this.keydown();
+            this.keyup();
         }
     };
  
