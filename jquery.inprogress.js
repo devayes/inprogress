@@ -36,6 +36,7 @@
             });
         }
 
+        $('#'+id+' div').css('width','0%');
         this.on('keyup', function(e){
             var percent = (($(this).val().length / settings.max) * 100);
             $('#'+id).css('max-width', $(this).outerWidth()); // Keep it updated.
